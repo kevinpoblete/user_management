@@ -5,13 +5,28 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
-
+                <div class="card-header">Roles</div>
+                
                 <div class="card-body">
+                        <div class="row mb-2">
+                            <div class="col-md-5">
+                                Role
+                            </div>
+                            <div class="col-md-5">
+                                Department
+                            </div>
+                            <div class="col-md-2">
+                                Action
+                            </div>
+                        </div>
                     @foreach ($roles as $role)
-                        <div class="row">
-                            <div class="col-md-9">
+                        <div class="row mb-2">
+                            
+                            <div class="col-md-5">
                                 <a href="{{ route('admin.role.show', [$role->id]) }}">{{ $role->name }}</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="">{{ $role->department->name }}</a>
                             </div>
                             <div class="col-md-1">
                                 <a href="{{ route('admin.role.edit', [$role->id]) }}" class="btn btn-warning">Edit</a>

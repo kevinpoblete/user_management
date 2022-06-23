@@ -21,6 +21,10 @@ class UserRepository{
         return $this->user->where('id', $id)->firstOrFail();
     }
 
+    public function findByDepartment($department){
+        
+    }
+
     public function store($user){
        return $this->user->create(
            ['name' => $user['name'],

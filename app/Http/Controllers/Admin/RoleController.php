@@ -43,7 +43,8 @@ class RoleController extends Controller
 
     public function edit($role){
         $role = $this->roleRepository->findById($role);
-        return view('admin.roles.edit', compact('role'));
+        $departments = $this->departmentRepository->all();
+        return view('admin.roles.edit', compact('role', 'departments'));
     }
 
     public function update(RoleRequest $request, $role){

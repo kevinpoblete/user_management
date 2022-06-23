@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Departments</div>
 
                 <div class="card-body">
                     @foreach ($departments as $department)
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-md-9">
                                 <a href="{{ route('admin.department.show', [$department->id]) }}">{{ $department->name }}</a>
                             </div>

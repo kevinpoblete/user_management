@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">User Management</div>
 
                 <div class="card-body">
                     <div class="row mb-2">
@@ -21,7 +21,7 @@
                         
                     </div>
                     @foreach ($users as $user)
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col-md-5">
                                 <a href="{{ route('admin.user.show', [$user->id]) }}">{{ $user->name }}</a>
                             </div>
