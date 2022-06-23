@@ -26,11 +26,14 @@ class UserRepository{
     }
 
     public function store($user){
-       return $this->user->create(
+       $data = $this->user->create(
            ['name' => $user['name'],
            'email' => $user['email'],
            'password' => Hash::make($user['password']),]
        );
+       if($user) {
+           $data->assignRole($user['role_id']);
+       }
     }
 
     public function update($request, $user){

@@ -52,6 +52,24 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} custom-select" name="role_id">
+                                    <option selected value="">Select Role</option>
+                                    @foreach ($roles as $role)
+                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('role_id'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('role_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

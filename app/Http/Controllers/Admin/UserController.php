@@ -31,7 +31,8 @@ class UserController extends Controller
     }
 
     public function create(){
-        return view('admin.users.create');
+        $roles = $this->roleRepository->all();
+        return view('admin.users.create', compact('roles'));
     }
 
     public function store(UserRequest $request){
@@ -46,7 +47,7 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user', 'roles'));
     }
 
-    public function update(Request $request, $user){
+    public function update(UserRequest $request, $user){
         
         $user = $this->userRepository->update($request, $user);
         return redirect(route('admin.user.index'));
